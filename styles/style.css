@@ -18,14 +18,35 @@ box-sizing: border-box;
    margin:10px;
 display:grid;
 grid-template-columns: 1fr 3fr;
-grid-auto-rows: minmax(50px;auto);
+grid-auto-rows: minmax(50px auto);
 grid-gap:10px;
 grid-template-areas: 
-"header header "
-"image image"
-"quote body"
-"footer footer"
+"header header header "
+"image image image"
+"body body body"
+"quote quote quote"
+"footer footer footer"
 }
+
+@media (min-width:600px){
+    #main{
+   
+        height:100vh;
+       width:100vw;
+       margin:10px;
+    display:grid;
+    grid-auto-columns: minmax(50px auto);
+    grid-auto-rows: minmax(50px auto);
+    grid-gap:10px;
+    grid-template-areas: 
+    "header header header "
+    "image image image"
+    "quote body body"
+    "quote body body"
+    "footer footer footer"
+    }
+}
+
 
 .header-bar{
     
@@ -35,48 +56,98 @@ grid-template-areas:
 }
 #title{
     background-color: #ada0ae; 
-    font-size:4rem;
+    font-size:2rem;
     font-weight:800;
 }
+@media (min-width:600px){
+    #title{
+        background-color: #ada0ae; 
+        font-size:4rem;
+        font-weight:800;
+    }  
+}
+
 
 .subtitle{
-    background-color: #ada0ae;;
-    font-size:2.5rem;
+    background-color: #ada0ae;
+    font-size:1.5rem;
     font-weight:600;
 }
 
-
-#image{
-    max-width: 100%;
-  height: auto;
-
+@media(min-width:600px){
+    .subtitle{
+        background-color: #ada0ae;
+        font-size:2.5rem;
+        font-weight:600;
+    }
 }
 
+#image{
+  max-width:100%;
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width:600px){
+    #image{
+    max-width:100%;
+    display: block;
+    height: auto;
+    object-fit: contain;
+  }  
+}
 
 
 #img-div{
     
-    padding:50px;
+    padding:10px;
     display:flex;
     justify-content: center;
     align-items: center;
 grid-area: image;
 text-align:center;
+margin:auto;
 }
 
-
+@media (min-width:600px){
+    #img-div{
+    
+        padding:50px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    grid-area: image;
+    text-align:center;
+    flex-wrap: wrap;
+    }
+}
 
 #img-caption{
-    font-size:2rem;
+    font-size:1.25rem;
 }
 
-  
+@media (min-width:600px){
+    #img-caption{
+        font-size:2rem;
+    }
+    
+}
 
 #tribute-info{
     grid-area: body;
-    font-size:2rem;
+    font-size:1.5rem;
 background-color:inherit;
 width:90%;
+}
+
+@media (min-width:600px){
+    #tribute-info{
+        grid-area: body;
+        font-size:2rem;
+    background-color:inherit;
+    width:90%;
+    }
 }
 
 .intro-para{
@@ -89,6 +160,7 @@ width:90%;
 h2{
     margin-left:20px;
 }
+
 ul{
    
     display:flex;
@@ -101,35 +173,73 @@ ul{
     border-radius:40px;
     background-color: white;
 }
+
 li{
     background-color: white;
     color:#2b2a2a
 }
 
-}
+
 .quotes{
-    display:flex;
-    flex-direction: column;
-    grid-area:quote;
-   flex-wrap:wrap;
+    
    
+    grid-area:quote;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+@media(min-width:600px) {
+    .quotes{
+        
+        grid-area:quote;
+       
+    }
+
 }
 .quote-1, .quote-2 {
     background-color:#A0AEAD;   
 border:2px double #000000;
 padding:40px;
 border-radius: 50px;
-font-size:1.5rem;
+font-size:1.25rem;
+
 }
 
+@media(min-width:600px) {
+    .quote-1, .quote-2 {
+        background-color:#A0AEAD;   
+    border:2px double #000000;
+    padding:40px;
+    border-radius: 50px;
+    font-size:1.5rem;
+    
+    }
+}
+
+.quote-1{
+    margin:2em;
+}
+
+@media(min-width:600px) {
 .quote-1{
     margin-bottom:30px;
 }
 
-.quote-1 em, .quote-2 em {
+.quote-1 .vinyl{
+    margin-bottom:2em;
+}
+}
+
+.quote-2 .thom{
+    margin-bottom:2em;
+}
+
+.quote-1 em, .quote-2 em, .quote-1 p, .quote-2 p{
     background-color:#A0AEAD;
     color:#ffffff;
 }
+
+
 
 a{
     color:#0000ff;
@@ -144,22 +254,31 @@ a:hover{
 }
 
 a:visited{
-    color:#8000FF:
+    color:#8000FF;
 }
 
 footer{
    background-color:#ada0ae;
    font-weight:600;
     grid-area: footer;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align:center;
     padding:20px;
   
 }
 
 
-
-
+@media(min-width:600px) {
+    footer{
+        background-color:#ada0ae;
+        font-weight:600;
+         grid-area: footer;
+         font-size: 2.5rem;
+         text-align:center;
+         padding:20px;
+       
+     }
+    }     
 
 
 
