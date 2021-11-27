@@ -1,303 +1,165 @@
+:root{
+    --light: #D9D8EA;
+    --dark: #44427C;
+    --brown: #A75B58;
+    --green: #58A75B;
+   
+}
+
 html{
-    font-size:10px;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
 }
+
 *{
-     background-color:#e2e2e1; 
-    color:#000000; 
-    margin:0;
+margin:0;
 padding:0;
-box-sizing: border-box; 
+box-sizing: border-box;
+line-height: 1.5;
 }
-
-
 
 #main{
-   
-    height:100vh;
-   width:100vw;
-   margin:10px;
-display:grid;
-grid-template-columns: 1fr 3fr;
-grid-auto-rows: minmax(50px auto);
-grid-gap:10px;
-grid-template-areas: 
-"header header header "
-"image image image"
-"body body body"
-"quote quote quote"
-"footer footer footer"
-}
-
-@media (min-width:600px){
-    #main{
-   
-        height:100vh;
-       width:100vw;
-       margin:10px;
-    display:grid;
-    grid-auto-columns: minmax(50px auto);
-    grid-auto-rows: minmax(50px auto);
+    
+    background:var(--light);
+    display: grid;
     grid-gap:10px;
     grid-template-areas: 
-    "header header header "
-    "image image image"
-    "quote body body"
-    "quote body body"
-    "footer footer footer"
-    }
-}
-
-
-.header-bar{
-    
-    grid-area:header;
-    text-align:center;
-    
-}
-#title{
-    background-color: #ada0ae; 
-    font-size:2rem;
-    font-weight:800;
-}
-@media (min-width:600px){
-    #title{
-        background-color: #ada0ae; 
-        font-size:4rem;
-        font-weight:800;
-    }  
-}
-
-
-.subtitle{
-    background-color: #ada0ae;
-    font-size:1.5rem;
-    font-weight:600;
-}
-
-@media(min-width:600px){
-    .subtitle{
-        background-color: #ada0ae;
-        font-size:2.5rem;
-        font-weight:600;
-    }
-}
-
-#image{
-  max-width:100%;
-  display: block;
-  height: auto;
-  object-fit: contain;
-}
-
-@media (min-width:600px){
-    #image{
-    max-width:100%;
-    display: block;
-    height: auto;
-    object-fit: contain;
-  }  
-}
-
-
-#img-div{
-    
-    padding:10px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-grid-area: image;
-text-align:center;
-margin:auto;
-}
-
-@media (min-width:600px){
-    #img-div{
-    
-        padding:50px;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    grid-area: image;
-    text-align:center;
-    flex-wrap: wrap;
-    }
-}
-
-#img-caption{
-    font-size:1.25rem;
-}
-
-@media (min-width:600px){
-    #img-caption{
-        font-size:2rem;
-    }
-    
-}
-
-#tribute-info{
-    grid-area: body;
-    font-size:1.5rem;
-background-color:inherit;
-width:90%;
-}
-
-@media (min-width:600px){
-    #tribute-info{
-        grid-area: body;
-        font-size:2rem;
-    background-color:inherit;
-    width:90%;
-    }
-}
-
-.intro-para{
-    text-align: justify;
-    width:90%;
-    margin-left:25px;
-}
-
-
-h2{
-    margin-left:20px;
-}
-
-ul{
-   
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 20px;
-    text-align: justify;
-    border:2px solid gray;
-    padding:30px;
-    border-radius:40px;
-    background-color: white;
-}
-
-li{
-    background-color: white;
-    color:#2b2a2a
-}
-
-
-.quotes{
-    
-   
-    grid-area:quote;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-}
-@media(min-width:600px) {
-    .quotes{
-        
-        grid-area:quote;
-       
-    }
-
-}
-.quote-1, .quote-2 {
-    background-color:#A0AEAD;   
-border:2px double #000000;
-padding:40px;
-border-radius: 50px;
-font-size:1.25rem;
-
-}
-
-@media(min-width:600px) {
-    .quote-1, .quote-2 {
-        background-color:#A0AEAD;   
-    border:2px double #000000;
-    padding:40px;
-    border-radius: 50px;
-    font-size:1.5rem;
-    
-    }
-}
-
-.quote-1{
-    margin:2em;
-}
-
-@media(min-width:600px) {
-.quote-1{
-    margin-bottom:30px;
-}
-
-.quote-1 .vinyl{
-    margin-bottom:2em;
-}
-}
-
-.quote-2 .thom{
-    margin-bottom:2em;
-}
-
-.quote-1 em, .quote-2 em, .quote-1 p, .quote-2 p{
-    background-color:#A0AEAD;
-    color:#ffffff;
-}
-
-
-
-a{
-    color:#0000ff;
-    text-decoration: none;
-text-align: center;
-margin-left:20px;
-}
-
-a:hover{
-    color:#0080FF;
-    text-decoration: underline;
-}
-
-a:visited{
-    color:#8000FF;
-}
-
-footer{
-   background-color:#ada0ae;
-   font-weight:600;
-    grid-area: footer;
-    font-size: 1.5rem;
-    text-align:center;
-    padding:20px;
+    "header"
+    "image"
+    "info"
+    "quote"
+    "footer"
+    ;
   
 }
 
 
-@media(min-width:600px) {
-    footer{
-        background-color:#ada0ae;
-        font-weight:600;
-         grid-area: footer;
-         font-size: 2.5rem;
-         text-align:center;
-         padding:20px;
-       
-     }
-    }     
+
+.header-bar{
+grid-area:header;
+background:var(--dark);
+color:#ffffff;
+text-align: center;
+}
+
+#title{
+font-size:2.5rem;
+font-weight: 700;
+}
+
+.subtitle{
+    font-size:1.8rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+#img-div{
+   text-align: center;
+    grid-area:image;
+}
+
+#image{
+    max-width:100%;
+    display:block;
+    
+}
+
+img{
+    width:50%;
+}
 
 
 
+#tribute-info{
+grid-area:info;
+font-size:1.6rem;
+text-align: justify;
+margin: 0px 20px 0px 20px;
+}
+.time-heading{
+    font-size:2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
 
+.intro-para{
+    
 
+    
+}
 
+.timeline{
+   
+    
+}
 
+.timeline ul{
+    margin: 0px 20px 0px 20px;
 
+}
 
+#tribute-link{
+  text-decoration: none;
+  color:var(--brown)
+}
 
+#tribute-link:hover{
+    text-decoration: underline;
+    color:var(--green);
 
+  }
 
+#tribute-quotes{
+    grid-area:quote;
+}
 
+.quote-heading{
+    text-align: center;
+    font-size:2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
 
+.quotes{
+    padding:40px;
+    display:flex;
+    flex-wrap: wrap;
+    gap:20px;
+    text-align: center;
+}
 
+.quote-1, .quote-2{
+    background:#ffdbda;
+    padding:40px;
+    border: 2px double black;
+    font-size: 1.6rem;
+    border-radius: 40px;
+}
 
+#footer{
+    grid-area:footer;
+    background: var(--dark);
+    font-size: 1.5rem;
+    text-align: center;
+}
 
+@media(min-width:600px){
+    
 
+    .quotes{
+        width: 80%;
+        margin:auto;
+        flex-wrap: nowrap;
+    }
 
-
-
-
+    .quote-1, .quote-2{
+        background:#ffdbda;
+        padding:40px;
+        border: 2px double black;
+        font-size: 1.6rem;
+        border-radius: 40px;
+    }
+}
