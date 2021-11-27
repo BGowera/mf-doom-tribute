@@ -136,19 +136,29 @@ margin: 0px 20px 0px 20px;
 }
 
 @media(min-width:600px){
+    #main{
+  grid-gap:30px;
+    }
     
-
-    .quotes{
-        width: 80%;
-        margin:auto;
-        flex-wrap: nowrap;
+    img{
+      width:80%;
     }
-
-    .quote-1, .quote-2{
-        background:#ffdbda;
-        padding:40px;
-        border: 2px double black;
-        font-size: 1.6rem;
-        border-radius: 40px;
+    
+    #img-caption{
+      font-size:1.6rem;
     }
-}
+  
+      .quotes{
+          width: 80%;
+          margin:auto;
+          flex-wrap: nowrap;
+      }
+  
+      .quote-1, .quote-2{
+          background:#ffdbda;
+          padding:40px;
+          border: 2px double black;
+          font-size: 1.6rem;
+          border-radius: 40px;
+      }
+  }
